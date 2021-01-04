@@ -34,7 +34,7 @@ cd startup_project/
 `python manage.py startapp hello`
 # check if a new folder "hello" is created?
 `ls hello/`
-# now edit two files hello/views.py and startup_project/urls.py
+# now edit 3 files hello/views.py, startup_project/settings.py, and startup_project/urls.py
 # add below to hello/views.py
 ```python
 from django.http import HttpResponse
@@ -50,6 +50,18 @@ from hello.views import myView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('sayHello/', myView),
+]
+```
+# edit startup_project/settings.py by adding a line: 'hello', to INSTALLED_APPS as below
+```python
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'hello',
 ]
 ```
 # 5.Test
